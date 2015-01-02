@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
    Fl_Input *input = new Fl_Input(40, 50, 60, 40, "label");
    input->value("Now...");
 
+   Fl_Text_Editor *ed = new Fl_Text_Editor(120, 50, 60, 70, "editor");
+
    w.end();
    w.show(argc, argv);
    Fl::run();
