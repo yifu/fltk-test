@@ -21,17 +21,17 @@ void changed_cb(int pos, int nInserted, int nDeleted,
 
 int main(int argc, char *argv[])
 {
-   Fl_Window w (600, 400);
+    Fl_Window w (600, 400);
 
-   Fl_Text_Editor *ed = new Fl_Text_Editor(5, 5, 590, 390, "editor");
-   Fl_Text_Buffer *textBuf = new Fl_Text_Buffer();
-   textBuf->add_modify_callback(changed_cb, textBuf/*cbArg*/);
-   ed->buffer(textBuf);
-   ed->textfont(FL_COURIER);
+    Fl_Text_Editor *ed = new Fl_Text_Editor(5, 5, 590, 390, "editor");
+    Fl_Text_Buffer *textBuf = new Fl_Text_Buffer();
+    textBuf->add_modify_callback(changed_cb, textBuf/*cbArg*/);
+    ed->buffer(textBuf);
+    ed->textfont(FL_COURIER);
 
-   w.end();
-   w.show(argc, argv);
-   Fl::run();
-   cout << textBuf->text() << endl;
-   return 0;
+    w.end();
+    w.show(argc, argv);
+    Fl::run();
+    cout << textBuf->text() << endl;
+    return 0;
 }
